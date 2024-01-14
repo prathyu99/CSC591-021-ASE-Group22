@@ -7,4 +7,9 @@ class SYM:
         self.mode = None
         self.most = 0
 
-    
+    def add(self, x):
+        if x != "?":
+            self.n += 1
+            self.has[x] = 1 + self.has.get(x, 0)
+            if self.has[x] > self.most:
+                self.most, self.mode = self.has[x], x
